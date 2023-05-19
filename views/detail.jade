@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  //- pre 
+  article.message.is-primary
+  .message-header
+    p Estas en el libro #{book.name}, pronto mas información.
+
+  .container
+    .columns
+      .column.is-one-third
+        if(book.image)
+          img(src='http://localhost:4040/#{book.image}' alt='Libro')
+        else
+          img(src="https://www.psicoactiva.com/wp-content/uploads/puzzleclopedia/libro-abierto.png")
+      .column.is-one-third
+        h1.title #{book.name}
+        h2.subtitle #{book.author}
+        h3.subtitle #{book.stock} libros disponibles
+        if book.state == "Disponible" || book.state == "disponible"
+          span.tag.is-success Disponible
+        else
+          span.tag.is-danger No disponible
+
+  //- .container-gallery
+  //-   .card
+  //-     .card-image
+  //-       figure.image.is-4by3
+  //-         if(book.image)
+  //-           img(src='http://localhost:4040/#{book.image}' alt='Libro')
+  //-         else
+  //-           img(src="https://www.psicoactiva.com/wp-content/uploads/puzzleclopedia/libro-abierto.png")
+  //-     .card-content
+  //-       .media
+  //-         .media-content
+  //-           p.title.is-4 #{book.name}
+  //-           p.subtitle.is-6 #{book.author}
+  //-       .content
+  //-         p Cantidad en stock: #{book.stock}
+  //-         p Estado: #{book.state}
+  //-       .buttons
+  //-         button.button.is-primary.is-small
+  //-           a(href='/update-book', style="text-decoration: none; color: white;") Agregar imagen

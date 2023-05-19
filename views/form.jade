@@ -1,0 +1,35 @@
+extends layout
+
+block content
+
+  .title.is-3.has-text-centered.has-text-uppercase AGREGAR LIBRO
+  .container
+    .columns
+      .column
+        form.form(action="/create-book", method="post") 
+          .field
+            label.label Nombre del libro
+            .control
+              input.input(type='text' name='name' placeholder='Ingresa el título del libro' required)
+          .field
+            label.label Autor
+            .control
+              input.input(type='text' name='author' placeholder='Ingresa el nombre del autor' required)
+          .field
+            label.label Cantidad en stock
+            .control
+              input.input(type='number' name='stock' placeholder='Ingresa la cantidad en stock' required)
+          .field
+            label.label Estado
+            .control
+              label.radio
+                input(type='radio' name='state' value='Disponible' required)
+                |     Disponible
+              label.radio
+                input(type='radio' name='state' value='No disponible' required)
+                |     No disponible
+
+          .field
+            button.button.is-primary(type="submit") Agregar libro
+      .column.has-text-centered
+        img(src="/images/book-hero.png")

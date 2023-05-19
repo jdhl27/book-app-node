@@ -1,0 +1,44 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.galeria{
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: dense;
+  grid-auto-rows: 40rem;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+.container-gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* padding-top: 2rem; */
+}
+.card {
+  margin: 1rem;
+  width: 300px;
+}
+.card-image img {
+  object-fit: cover;
+  height: 300px;
+}
+
+.container {
+  justify-content: center;
+  padding-top: 20px;
+}
+/* .form {
+  width: 30%;
+} */
+
+.buttons{
+  display: flex;
+}

@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css')
+    link(rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon')
+
+  body
+    nav.navbar.is-danger(role='navigation' aria-label='main navigation')
+      .navbar-brand
+        a.navbar-item(href='/')
+          img(src='/images/books.png' height='28')
+          h1 Joseph Conrad
+        a.navbar-burger(role='button' aria-label='menu' aria-expanded='false' data-target='navbarBasicExample')
+          span(aria-hidden='true')
+          span(aria-hidden='true')
+          span(aria-hidden='true')
+      #navbarBasicExample.navbar-menu
+          .navbar-item
+            .buttons
+              a.button.is-info(href='/create-book')
+                | Agregar libro
+  
+
+        
+    div(class="container")
+      block content
+      script(src="/javascripts/script.js")
+

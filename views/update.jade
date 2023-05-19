@@ -1,0 +1,26 @@
+extends layout
+
+block content
+
+  .container
+    .title.is-3.has-text-centered.has-text-uppercase ACTUALIZAR LIBRO #{bookId}
+    .is-flex.is-justify-content-center
+      form.form(action="/update-book", method="post", enctype="multipart/form-data") 
+        .field.is-hidden
+        .control
+          input.input(type='hidden' name='bookId' value=bookId)
+        .field
+          label.label Imagen del libro:
+          .file.is-boxed.has-name
+            .file-cta
+              .file-icon
+                i.fas.fa-upload
+              .file-label
+                input.file-input(type='file' name='image' id='book-image' required)
+                span.file-cta-text Seleccionar archivo
+            button.button.is-danger(type='button' id='clear-image') Limpiar
+          .preview
+            img(id='book-image-preview' src='' alt='Aquí verás la imagen que selecciones')
+
+        .field
+          button.button.is-primary(type="submit") Agregar imagen
